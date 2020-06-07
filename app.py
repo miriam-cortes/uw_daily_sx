@@ -11,16 +11,22 @@ app = Flask(__name__)
 import schedule
 import time
 
+GOOGLE_FORM_LINK = 'google_form_link'
+DEFAULT_MESSAGE = f"Please fill our your symptom attestation if you plan on working out today {GOOGLE_FORM_LINK}"
 
-def send_message(msg='test'):
+
+def send_message(msg=DEFAULT_MESSAGE):
     url = 'https://api.groupme.com/v3/bots/post'
 
     data = {
         'bot_id': os.getenv('GROUPME_BOT_ID'),
         'text': msg,
     }
-    request = Request(url, urlencode(data).encode())
-    json = urlopen(request).read().decode()
+    try:
+        request = Request(url, urlencode(data).encode())
+        json = urlopen(request).read().decode()
+    except Exception as e:
+        print(e)
 
 
 schedule.every().minute.do(send_message)
@@ -28,5 +34,5 @@ schedule.every().minute.do(send_message)
 while True:
     print('running pending')
     schedule.run_pending()
-    time.sleep(60)
+    time.sleep(50)
 
