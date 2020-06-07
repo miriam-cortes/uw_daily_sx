@@ -24,6 +24,7 @@ def send_message(msg=DEFAULT_MESSAGE):
     }
     try:
         request = Request(url, urlencode(data).encode())
+        import pdb; pdb.set_trace()
         json = urlopen(request).read().decode()
     except Exception as e:
         print(e)
