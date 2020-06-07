@@ -1,1 +1,1 @@
-web: gunicorn uw_daily_sx:app
+web: gunicorn uwdailysx:app
