@@ -14,7 +14,7 @@ DEFAULT_MESSAGE = f"Please fill our your symptom attestation if you plan on work
 
 def send_message(msg=DEFAULT_MESSAGE):
     url = 'https://api.groupme.com/v3/bots/post'
-
+    import pdb; pdb.set_trace()
     data = {
         'bot_id': os.environ('GROUPME_BOT_ID'),
         'text': msg,
