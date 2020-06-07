@@ -19,7 +19,7 @@ def send_message(msg=DEFAULT_MESSAGE):
     url = 'https://api.groupme.com/v3/bots/post'
 
     data = {
-        'bot_id': os.getenv('GROUPME_BOT_ID'),
+        'bot_id': os.environ('GROUPME_BOT_ID'),
         'text': msg,
     }
     try:
