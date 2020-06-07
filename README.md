@@ -1,1 +1,1 @@
-# uw_daily_sx
+# uwdailysx
