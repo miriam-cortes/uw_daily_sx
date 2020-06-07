@@ -1,1 +1,1 @@
-web: gunicorn groupme-bot:app
+web: gunicorn uw_daily_sx:app
