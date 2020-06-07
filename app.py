@@ -16,7 +16,7 @@ def send_message(msg=DEFAULT_MESSAGE):
     url = 'https://api.groupme.com/v3/bots/post'
     import pdb; pdb.set_trace()
     data = {
-        'bot_id': os.environ('GROUPME_BOT_ID'),
+        'bot_id': os.environ.get('GROUPME_TEST_BOT_ID'),
         'text': msg,
     }
     try:
