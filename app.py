@@ -8,9 +8,6 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
-import schedule
-import time
-
 GOOGLE_FORM_LINK = 'google_form_link'
 DEFAULT_MESSAGE = f"Please fill our your symptom attestation if you plan on working out today {GOOGLE_FORM_LINK}"
 
@@ -23,17 +20,12 @@ def send_message(msg=DEFAULT_MESSAGE):
         'text': msg,
     }
     try:
+        print(f"trying to send to {url} wiith data {data}")
         request = Request(url, urlencode(data).encode())
-        import pdb; pdb.set_trace()
         json = urlopen(request).read().decode()
     except Exception as e:
         print(e)
 
 
-schedule.every().minute.do(send_message)
-
-while True:
-    print('running pending')
-    schedule.run_pending()
-    time.sleep(50)
+send_message()
 
