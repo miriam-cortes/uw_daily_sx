@@ -1,9 +1,7 @@
 import os
-
+from flask import Flask, request
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
-
-from flask import Flask, request
 
 app = Flask(__name__)
 
@@ -23,6 +21,7 @@ def send_message(msg=DEFAULT_MESSAGE):
         json = urlopen(request).read().decode()
     except Exception as e:
         print(e)
+    print("success")
 
 
 send_message()
