@@ -9,7 +9,7 @@ from flask import Flask, request
 app = Flask(__name__)
 
 GOOGLE_FORM_LINK = 'google_form_link'
-DEFAULT_MESSAGE = f"Please fill out your symptom attestation if you plan on working out today {GOOGLE_FORM_LINK}...Miriam apologizes for all the messages. If you receive this message 2 times in 10 minutes- we've succeeded!!"
+DEFAULT_MESSAGE = f"Please fill out your symptom attestation if you plan on working out today {GOOGLE_FORM_LINK}"
 
 
 def send_message(msg=DEFAULT_MESSAGE):
@@ -19,7 +19,7 @@ def send_message(msg=DEFAULT_MESSAGE):
         'text': msg,
     }
     try:
-        print(f"trying to send to {url} with data {data}")
+        print(f"sending to {url} with data {data}")
         request = Request(url, urlencode(data).encode())
         json = urlopen(request).read().decode()
     except Exception as e:
