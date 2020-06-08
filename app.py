@@ -5,7 +5,7 @@ from urllib.request import Request, urlopen
 
 app = Flask(__name__)
 
-GOOGLE_FORM_LINK = 'google_form_link'
+GOOGLE_FORM_LINK = 'https://forms.gle/s3Sn7PHuT8NNtPv86'
 DEFAULT_MESSAGE = f"Please fill out your symptom attestation if you plan on working out today {GOOGLE_FORM_LINK}"
 
 
