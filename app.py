@@ -9,18 +9,17 @@ from flask import Flask, request
 app = Flask(__name__)
 
 GOOGLE_FORM_LINK = 'google_form_link'
-DEFAULT_MESSAGE = f"Please fill our your symptom attestation if you plan on working out today {GOOGLE_FORM_LINK}"
+DEFAULT_MESSAGE = f"Please fill out your symptom attestation if you plan on working out today {GOOGLE_FORM_LINK}...Miriam apologizes for all the messages. If you receive this message 2 times in 10 minutes- we've succeeded!!"
 
 
 def send_message(msg=DEFAULT_MESSAGE):
     url = 'https://api.groupme.com/v3/bots/post'
-    import pdb; pdb.set_trace()
     data = {
         'bot_id': os.environ.get('GROUPME_TEST_BOT_ID'),
         'text': msg,
     }
     try:
-        print(f"trying to send to {url} wiith data {data}")
+        print(f"trying to send to {url} with data {data}")
         request = Request(url, urlencode(data).encode())
         json = urlopen(request).read().decode()
     except Exception as e:
