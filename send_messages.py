@@ -17,9 +17,8 @@ def send_message(msg=DEFAULT_MESSAGE):
     }
     try:
         print(f"sending to {url} with data {data}")
-        import pdb; pdb.set_trace()
-        # request = Request(url, urlencode(data).encode())
-        # json = urlopen(request).read().decode()
+        request = Request(url, urlencode(data).encode())
+        json = urlopen(request).read().decode()
     except Exception as e:
         print(e)
     print("success")
