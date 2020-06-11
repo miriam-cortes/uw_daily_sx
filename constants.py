@@ -1,0 +1,2 @@
+QUARANTINE_MESSAGE = "Fill this out if you plan on training on campus. If you do not fill this out before you arrive, YOU WILL BE SENT HOME."
+DEFAULT_MESSAGE = f"Please fill out your symptom attestation if you plan on working out today {GOOGLE_FORM_LINK}"

@@ -2,15 +2,13 @@ import os
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
-GOOGLE_FORM_LINK = 'https://forms.gle/s3Sn7PHuT8NNtPv86'
+GOOGLE_FORM_LINK = ''
 DEFAULT_MESSAGE = f"Please fill out your symptom attestation if you plan on working out today {GOOGLE_FORM_LINK}"
-GROUPME_BOT_IDS = [
-    'GROUPME_TEST_BOT_ID',
-]
 
 
-def send_message(msg=DEFAULT_MESSAGE):
-    for id in GROUPME_BOT_IDS:
+
+def send_message(groupme_bots, msg=DEFAULT_MESSAGE):
+    for id in groupme_bots:
         url = 'https://api.groupme.com/v3/bots/post'
         data = {
             'bot_id': os.environ.get(id),
