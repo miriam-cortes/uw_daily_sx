@@ -1,2 +1,3 @@
-QUARANTINE_MESSAGE = "Fill this out if you plan on training on campus. If you do not fill this out before you arrive, YOU WILL BE SENT HOME."
-DEFAULT_MESSAGE = f"Please fill out your symptom attestation if you plan on working out today {GOOGLE_FORM_LINK}"
+QUARANTINE_MESSAGE = "You have to fill this out every day. If you miss a day you must contact your athletic trainer for the reason why. Missed days DO NOT count toward quarantine unless approved by your athletic trainer or team physician."
+OTHER_MESSAGE = "Fill this out every day if you plan on training on campus. If you do not fill this out before you arrive, YOU WILL BE SENT HOME."
+DEFAULT_MESSAGE = "Please fill out your symptom attestation if you plan on working out today "
