@@ -3,7 +3,7 @@ from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 from constants import QUARANTINE_MESSAGE
 
-GOOGLE_FORM_LINK = os.environ.get('FB_QFORM')
+GOOGLE_FORM_LINK = os.environ.get('FB_Q_DAILY')
 football_message = f"{QUARANTINE_MESSAGE} {GOOGLE_FORM_LINK}"
 
 
