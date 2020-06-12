@@ -19,3 +19,10 @@ from constants import QUARANTINE_MESSAGE
 # 5- Saturday
 # 6- Sunday
 
+
+# DAILY FOOTBALL MESSAGE TO QUARANTINED ATHLETES
+send_message(
+    os.environ.get('FOOTBALL_Q_BOT_ID'), # football-quarantined bot from heroku configs
+    os.environ.get('FB_Q_DAILY'), # google form link from heroku configs
+    QUARANTINE_MESSAGE # message
+)
