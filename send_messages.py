@@ -1,4 +1,3 @@
-import os
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 from constants import DEFAULT_MESSAGE
