@@ -26,3 +26,9 @@ send_message(
     os.environ.get('FB_Q_DAILY'), # google form link from heroku configs
     QUARANTINE_MESSAGE # message
 )
+# DAILY OLYMPIC MESSAGE TO QUARANTINED ATHLETES
+send_message(
+    os.environ.get('OLY_Q_BOT_ID'), # olympics-quarantined bot from heroku configs
+    os.environ.get('OLY_Q_DAILY'), # google form link from heroku configs
+    QUARANTINE_MESSAGE # message
+)
