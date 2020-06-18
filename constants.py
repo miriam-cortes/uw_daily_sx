@@ -4,4 +4,4 @@ QUARANTINE_MESSAGE = "You have to fill this out every day. " \
                      "athletic trainer or team physician."
 OTHER_MESSAGE = "Fill this out every day you plan on training on campus. " \
                 "If you do not fill this out before you arrive, YOU WILL BE SENT HOME."
-DEFAULT_MESSAGE = "Please fill out your symptom attestation if you plan on working out today "
+DEFAULT_MESSAGE = "Please fill out your symptom attestation if you plan on working on-site today "
