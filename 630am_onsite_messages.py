@@ -22,13 +22,13 @@ from constants import OTHER_MESSAGE
 
 # DAILY FOOTBALL MESSAGE TO ONSITE ATHLETES
 send_message(
-    os.environ.get('FOOTBALL_ONSITE_BOT_ID'), # football-onsite bot from heroku configs
+    'FOOTBALL_ONSITE_BOT_ID', # football-onsite bot from heroku configs
     os.environ.get('FB_ONSITE_DAILY'), # google form link from heroku configs
     OTHER_MESSAGE # message
 )
 # DAILY OLYMPIC MESSAGE TO ONSITE ATHLETES
 send_message(
-    os.environ.get('OLY_ONSITE_BOT_ID'), # olympic-onsite bot from heroku configs
+    'OLY_ONSITE_BOT_ID', # olympic-onsite bot from heroku configs
     os.environ.get('OLY_ONSITE_DAILY'), # google form link from heroku configs
     OTHER_MESSAGE # message
 )

@@ -22,7 +22,7 @@ from constants import DEFAULT_MESSAGE
 
 # DAILY ATC MESSAGE
 send_message(
-    os.environ.get('ATC_BOT'), # ATC bot from heroku configs
+    'ATC_BOT', # ATC bot from heroku configs
     os.environ.get('WORKDAY_LINK'), # workday link from heroku configs
     DEFAULT_MESSAGE # message
 )
