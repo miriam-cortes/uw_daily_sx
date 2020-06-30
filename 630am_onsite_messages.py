@@ -35,12 +35,12 @@ send_message(
 # DAILY MESSAGE TO ONSITE STUDENT INTERNS
 send_message(
     'STUDENT_ONSITE_BOT_ID', 
-    os.environ.get('STUDENT_ONSITE'), # google form link from heroku configs
+    os.environ.get('STUDENT_ONSITE'), 
     OTHER_MESSAGE # message
 )
-# DAILY OLYMPIC MESSAGE TO ONSITE ATHLETES
+# DAILY MESSAGE TO ONSITE STUDENT MANAGERS
 send_message(
-    'MANAGER_ONSITE_BOT_ID', # olympic-onsite bot from heroku configs
-    os.environ.get('MANAGER_ONSITE'), # google form link from heroku configs
+    'MANAGER_ONSITE_BOT_ID', 
+    os.environ.get('MANAGER_ONSITE'), 
     OTHER_MESSAGE # message
 )
