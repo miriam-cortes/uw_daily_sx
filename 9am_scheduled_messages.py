@@ -32,15 +32,3 @@ send_message(
     os.environ.get('OLY_Q_DAILY'), # google form link from heroku configs
     QUARANTINE_MESSAGE # message
 )
-# DAILY MESSAGE TO QUARANTINED STUDENT INTERNS
-send_message(
-    'STUDENT_Q_BOT_ID', 
-    os.environ.get('STUDENT_Q_DAILY'), 
-    QUARANTINE_MESSAGE # message
-)
-# DAILY MESSAGE TO QUARANTINED STUDENT MANAGERS
-send_message(
-    'MANAGER_Q_BOT_ID', #
-    os.environ.get('MANAGER_Q_DAILY'), 
-    QUARANTINE_MESSAGE # message
-)
