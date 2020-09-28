@@ -50,3 +50,9 @@ send_message(
     os.environ.get('ROWING_DAILY'), # google form link from heroku configs
     OTHER_MESSAGE # message
 )
+# TRACK DAILY
+send_message(
+    'TRACKBOT_ID',
+    os.environ.get('TRACK_DAILY'), # google form link from heroku configs
+    OTHER_MESSAGE # message
+)
