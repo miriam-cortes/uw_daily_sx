@@ -44,3 +44,9 @@ send_message(
     os.environ.get('MANAGER_ONSITE'), 
     OTHER_MESSAGE # message
 )
+# ROWING DAILY
+send_message(
+    'ROWBOT_ID',
+    os.environ.get('ROWING_DAILY'), # google form link from heroku configs
+    OTHER_MESSAGE # message
+)
