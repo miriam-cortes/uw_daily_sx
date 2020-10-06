@@ -1,10 +1,9 @@
 import os
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
-from constants import DEFAULT_MESSAGE
 
 
-def send_message(groupme_bot, form_link, msg=DEFAULT_MESSAGE):
+def send_message(groupme_bot, form_link, msg):
     url = 'https://api.groupme.com/v3/bots/post'
     data = {
         'bot_id': os.environ.get(groupme_bot),
