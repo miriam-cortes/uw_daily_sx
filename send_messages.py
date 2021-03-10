@@ -11,7 +11,7 @@ def send_message(groupme_bot, form_link, msg):
     }
 
     print("sending to bot {}".format(groupme_bot))
-    tries = 4
+    tries = 10
     for i in range(tries):
         try:
             request = Request(url, urlencode(data).encode())
