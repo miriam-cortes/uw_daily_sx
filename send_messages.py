@@ -15,6 +15,7 @@ def send_message(groupme_bot, form_link, msg):
     for i in range(tries):
         try:
             request = Request(url, urlencode(data).encode())
+            import pdb; pdb.set_trace()
             json = urlopen(request).read().decode()
             print("success sending to bot {} on the {} try".format(groupme_bot, i))
             break
