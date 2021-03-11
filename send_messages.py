@@ -6,11 +6,11 @@ from urllib.request import Request, urlopen
 
 
 def send_message(groupme_bot, form_link, msg):
-    url = 'https://api.groupme.com/v3/bots/post'
-    data = {
-        'bot_id': os.environ.get(groupme_bot),
-        'text': "{} {}".format(msg, form_link),
-    }
+#     url = os.environ.get(groupme_bot)
+#     data = {
+#                     'bot_id': os.environ.get(groupme_bot),
+#                     'text': "{} {}".format(msg, form_link)
+#                 }
 
     print("sending to bot {}".format(groupme_bot))
     tries = 10
@@ -19,9 +19,11 @@ def send_message(groupme_bot, form_link, msg):
 #             request = Request(url, urlencode(data).encode())
 #             json = urlopen(request).read().decode()
             response = requests.post(
-                url=url,
-                data=data
-            )
+                url='https://api.groupme.com/v3/bots/post',
+                data={
+                    'bot_id': os.environ.get(groupme_bot),
+                    'text': "{} {}".format(msg, form_link)
+                })
             import pdb; pdb.set_trace()
             if response.status_code == 200:
                 print("success sending to bot {} on the {} try".format(groupme_bot, i))
