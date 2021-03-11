@@ -15,7 +15,7 @@ def send_message(groupme_bot, form_link, msg):
     for i in range(tries):
         try:
             request = Request(url, urlencode(data).encode())
-            # json = urlopen(request).read().decode()
+            json = urlopen(request).read().decode()
             print("success sending to bot {} on the {} try".format(groupme_bot, i))
             break
         except Exception as e:
