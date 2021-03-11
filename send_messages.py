@@ -1,4 +1,6 @@
+import json
 import os
+import requests
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
@@ -14,10 +16,15 @@ def send_message(groupme_bot, form_link, msg):
     tries = 10
     for i in range(tries):
         try:
-            request = Request(url, urlencode(data).encode())
+#             request = Request(url, urlencode(data).encode())
+#             json = urlopen(request).read().decode()
+            response = requests.post(
+                url=url,
+                data=data
+            )
             import pdb; pdb.set_trace()
-            json = urlopen(request).read().decode()
-            print("success sending to bot {} on the {} try".format(groupme_bot, i))
+            if response.status_code == 200:
+                print("success sending to bot {} on the {} try".format(groupme_bot, i))
             break
         except Exception as e:
             print("failed for bot {} on try number {} - error: {}".format(groupme_bot, i, e))
