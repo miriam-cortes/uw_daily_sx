@@ -27,6 +27,8 @@ def send_message(groupme_bot, form_link, msg):
             import pdb; pdb.set_trace()
             if response.status_code == 200:
                 print("success sending to bot {} on the {} try".format(groupme_bot, i))
+            else:
+                print("failed: {}".format(response.text))
             break
         except Exception as e:
             print("failed for bot {} on try number {} - error: {}".format(groupme_bot, i, e))
