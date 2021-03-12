@@ -6,30 +6,21 @@ from urllib.request import Request, urlopen
 
 
 def send_message(groupme_bot, form_link, msg):
-#     url = os.environ.get(groupme_bot)
-#     data = {
-#                     'bot_id': os.environ.get(groupme_bot),
-#                     'text': "{} {}".format(msg, form_link)
-#                 }
+    url = 'https://api.groupme.com/v3/bots/post'
+    bot_id = os.environ.get(groupme_bot)
+    message_text = "{} {}".format(msg, form_link)
+    url_with_params = "{}?bot_id={}&text={}".format(url, bot_id, message_text)
 
     print("sending to bot {}".format(groupme_bot))
-    tries = 10
+    tries = 4
     for i in range(tries):
         try:
-#             request = Request(url, urlencode(data).encode())
-#             json = urlopen(request).read().decode()
-            response = requests.post(
-                url='https://api.groupme.com/v3/bots/post',
-                data={
-                    'bot_id': os.environ.get(groupme_bot),
-                    'text': "{} {}".format(msg, form_link)
-                })
-            import pdb; pdb.set_trace()
-            if response.status_code == 200:
-                print("success sending to bot {} on the {} try".format(groupme_bot, i))
+            # request = Request(url, urlencode(data).encode())
+            # json = urlopen(request).read().decode()
+            response = requests.post(url_with_params)
+            if response.ok:
+                print("success sending to bot {} on try number {}".format(groupme_bot, i + 1))
                 break
-            else:
-                print("failed: {}".format(response.text))
+            print("failed: {}".format(response.text))
         except Exception as e:
-            print("failed for bot {} on try number {} - error: {}".format(groupme_bot, i, e))
-
+            print("failed for bot {} on try number {} - error: {}".format(groupme_bot, i + 1, e))
