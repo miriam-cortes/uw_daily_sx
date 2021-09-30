@@ -1,0 +1,11 @@
+import os
+from datetime import date
+from send_messages import send_message
+from constants import INTERN_LOG_MESSAGE
+
+# DAILY REMINDER FOR ATCS TO LOG STUDENT INTERN HOURS
+send_message(
+    'STUDENT_INTERN_LOG_BOT', # Intern log bot from heroku configs
+    '',
+    INTERN_LOG_MESSAGE # message
+)
