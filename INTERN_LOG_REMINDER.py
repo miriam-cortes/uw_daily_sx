@@ -23,6 +23,6 @@ from constants import INTERN_LOG_MESSAGE
 if date.today().weekday() == 4:
     send_message(
         'STUDENT_INTERN_LOG_BOT', # Intern log bot from heroku configs
-        '',
+        os.environ.get('INTERN_LOG_LINK'), # google form link from heroku configs',
         INTERN_LOG_MESSAGE # message
     )
