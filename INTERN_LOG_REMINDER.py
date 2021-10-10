@@ -20,7 +20,7 @@ from constants import INTERN_LOG_MESSAGE
 # 5- Saturday
 # 6- Sunday
 
-if date.today().weekday() == 4 :
+if date.today().weekday() == 4:
     send_message(
         'STUDENT_INTERN_LOG_BOT', # Intern log bot from heroku configs
         '',
