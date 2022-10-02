@@ -13,5 +13,5 @@ A simple app that sends messages to a groupme account via a registered bot
 8. Copy one of the `send_message(...)` pieces of code and paste it at the bottom of the page (make sure to leave one line at the end....for reasons).  Make sure to change the BOT_ID and Google form link to the keys you put in the Heroku configs in step 3. If there should be a different message add it to [the constants file](https://github.com/miriam-cortes/uw_daily_sx/blob/master/constants.py) and make sure to import it in line 4 of your file.
 9. In the `commit changes` box below the code, add the message "added GROUPME_SPORTNAME_BOT_ID" and click the green "Commit changes" button.
 10. This should kick off a deploy in Heroku. Click the `Overview` menu and you should see on the right column a new deploy started a few seconds ago. Give it a minute and maybe refresh the page if you haven't seen it start.
-11. Create a new scheduled job in Heroku, following the pattern from the other jobs (don't forget times are UTC!)
+11. Create a new scheduled job in Heroku, remember it's in UTC. Copy and paste the name of the file but make sure to put python in front for .py files. (EX: python INTERN_LOG_REMINDER.py)
 12. The next time the scheduled job runs it will send a message to the new group as well! :self-high-five: you did it!
